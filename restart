@@ -1,0 +1,7 @@
+PID=$(cat gun.pid)
+PID_INFO=$(ps -ef | grep $PID | grep -v grep)
+if [ "$PID_INFO" ]; then
+    kill -9 $PID
+    sleep 2s
+fi
+gunicorn -c gun.py Hiss.wsgi:application -D

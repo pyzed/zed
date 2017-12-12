@@ -1,0 +1,4 @@
+- hosts: all
+  tasks:
+  - name: touch file
+    shell: touch /tmp/zedlide
